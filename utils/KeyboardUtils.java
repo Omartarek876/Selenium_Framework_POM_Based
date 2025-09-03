@@ -1,17 +1,16 @@
 package Selenium_Framework.utils;
 
 import static Selenium_Framework.utils.ElementUtils.getElement;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
 import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 
 /**
- * A utility class for sending keyboard actions to elements and the browser.
+ * A utility class for sending keyboard actions to elements.
  * It simplifies common keyboard operations like sending text, key combinations,
- * and simulating system-level keystrokes for tasks like authentication.
+ * and performing actions like copy and paste.
  */
 public class KeyboardUtils {
     
@@ -25,15 +24,6 @@ public class KeyboardUtils {
         getElement(locator).sendKeys(text);
     }
     
-    /**
-     * Sends a single keyboard key to the specified {@link WebElement}.
-     *
-     * @param element The target {@link WebElement}.
-     * @param key The {@link Keys} enum representing the key to send.
-     */
-    public static void sendKey(WebElement element, Keys key) {
-        element.sendKeys(key);
-    }
 
     /**
      * Sends a single keyboard key to an element located by a `By` locator.
@@ -49,60 +39,60 @@ public class KeyboardUtils {
      * Sends a combination of keys (a chord) to the specified element.
      * This is useful for shortcuts like Ctrl+A, Ctrl+C, etc.
      *
-     * @param element The target {@link WebElement}.
+     * @param locator The {@link By} locator of the element.
      * @param key1 The first key in the combination.
      * @param key2 The second key in the combination.
      */
-    public static void sendKeyCombination(WebElement element, Keys key1, Keys key2) {
-        element.sendKeys(Keys.chord(key1, key2));
+    public static void sendKeyCombination(By locator, Keys key1, Keys key2) {
+        getElement(locator).sendKeys(Keys.chord(key1, key2));
     }
     
     /**
      * Sends the ENTER key to the specified element.
      *
-     * @param element The target {@link WebElement}.
+     * @param locator The {@link By} locator of the element.
      */
-    public static void sendEnter(WebElement element) {
-        element.sendKeys(Keys.ENTER);
+    public static void sendEnter(By locator) {
+        getElement(locator).sendKeys(Keys.ENTER);
     }
 
     /**
      * Sends the TAB key to the specified element.
      *
-     * @param element The target {@link WebElement}.
+     * @param locator The {@link By} locator of the element.
      */
-    public static void sendTab(WebElement element) {
-        element.sendKeys(Keys.TAB);
+    public static void sendTab(By locator) {
+        getElement(locator).sendKeys(Keys.TAB);
     }
 
     /**
      * Selects all text within an element by sending the Ctrl + A key combination.
      *
-     * @param element The target {@link WebElement}.
+     * @param locator The {@link By} locator of the element.
      */
-    public static void copyAll(WebElement element) {
-        element.sendKeys(Keys.chord(Keys.CONTROL, "a"));
+    public static void copyAll(By locator) {
+        getElement(locator).sendKeys(Keys.chord(Keys.CONTROL, "a"));
     }
 
     /**
      * Copies selected text from an element by sending the Ctrl + C key combination.
      *
-     * @param element The target {@link WebElement}.
+     * @param locator The {@link By} locator of the element.
      */
-    public static void copyText(WebElement element) {
-        element.sendKeys(Keys.chord(Keys.CONTROL, "c"));
+    public static void copyText(By locator) {
+        getElement(locator).sendKeys(Keys.chord(Keys.CONTROL, "c"));
     }
 
     /**
      * Pastes text into the specified element by sending the Ctrl + V key combination.
      *
-     * @param element The target {@link WebElement}.
+     * @param locator The {@link By} locator of the element.
      */
-    public static void pasteText(WebElement element) {
-        element.sendKeys(Keys.chord(Keys.CONTROL, "v"));
+    public static void pasteText(By locator) {
+        getElement(locator).sendKeys(Keys.chord(Keys.CONTROL, "v"));
     }
     
-    /**
+        /**
      * Simulates a user entering a username and password into a basic authentication popup
      * using the `java.awt.Robot` class. This is a workaround for popups that Selenium
      * cannot interact with directly.
@@ -137,4 +127,5 @@ public class KeyboardUtils {
         robot.keyPress(KeyEvent.VK_ENTER);
         robot.keyRelease(KeyEvent.VK_ENTER);
     }
+    
 }

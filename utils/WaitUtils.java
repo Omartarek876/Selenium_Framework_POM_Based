@@ -12,7 +12,8 @@ import java.util.function.Function;
 /**
  * A utility class for handling explicit, implicit, and fluent waits in Selenium.
  * This class provides a centralized way to manage different types of waits,
- * ensuring synchronization between the test script and the web browser.
+ * ensuring synchronization between the test script and the web browser by using
+ * By locators to find elements.
  */
 public class WaitUtils {
 
@@ -35,21 +36,6 @@ public class WaitUtils {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
 
-    /**
-     * Waits for the visibility of a given {@link WebElement}.
-     * This method is suitable for a known element but may encounter a
-     * {@link StaleElementReferenceException} if the element's state changes.
-     *
-     * @param element The {@link WebElement} to wait for.
-     * @param timeoutSeconds The maximum time in seconds to wait.
-     * @return The {@link WebElement} once it is visible.
-     * @throws TimeoutException if the element is not visible within the specified time.
-     */
-    public static WebElement waitForVisibility(WebElement element, int timeoutSeconds) {
-        WebDriverWait wait = new WebDriverWait(BaseDriver.getDriver(), Duration.ofSeconds(timeoutSeconds));
-        return wait.until(ExpectedConditions.visibilityOf(element));
-    }
-
     // ======================
     // ✅ CLICKABILITY
     // ======================
@@ -66,19 +52,6 @@ public class WaitUtils {
     public static WebElement waitForClickability(By locator, int timeoutSeconds) {
         WebDriverWait wait = new WebDriverWait(BaseDriver.getDriver(), Duration.ofSeconds(timeoutSeconds));
         return wait.until(ExpectedConditions.elementToBeClickable(locator));
-    }
-
-    /**
-     * Waits for a given {@link WebElement} to be clickable.
-     *
-     * @param element The {@link WebElement} to wait for.
-     * @param timeoutSeconds The maximum time in seconds to wait for clickability.
-     * @return The {@link WebElement} once it is clickable.
-     * @throws TimeoutException if the element is not clickable within the specified time.
-     */
-    public static WebElement waitForClickability(WebElement element, int timeoutSeconds) {
-        WebDriverWait wait = new WebDriverWait(BaseDriver.getDriver(), Duration.ofSeconds(timeoutSeconds));
-        return wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
     // ======================
@@ -116,19 +89,6 @@ public class WaitUtils {
         return wait.until(ExpectedConditions.textToBePresentInElementLocated(locator, text));
     }
 
-    /**
-     * Waits for a specific text string to be present in a given {@link WebElement}.
-     *
-     * @param element The {@link WebElement} to check for the text.
-     * @param text The text string expected to be in the element.
-     * @param timeoutSeconds The maximum time in seconds to wait for the text.
-     * @return {@code true} if the text is found, otherwise throws {@link TimeoutException}.
-     */
-    public static boolean waitForTextToBePresent(WebElement element, String text, int timeoutSeconds) {
-        WebDriverWait wait = new WebDriverWait(BaseDriver.getDriver(), Duration.ofSeconds(timeoutSeconds));
-        return wait.until(ExpectedConditions.textToBePresentInElement(element, text));
-    }
-
     // ======================
     // ✅ INVISIBILITY
     // ======================
@@ -144,18 +104,6 @@ public class WaitUtils {
     public static boolean waitForInvisibility(By locator, int timeoutSeconds) {
         WebDriverWait wait = new WebDriverWait(BaseDriver.getDriver(), Duration.ofSeconds(timeoutSeconds));
         return wait.until(ExpectedConditions.invisibilityOfElementLocated(locator));
-    }
-
-    /**
-     * Waits for a given {@link WebElement} to become invisible.
-     *
-     * @param element The {@link WebElement} to wait for.
-     * @param timeoutSeconds The maximum time in seconds to wait.
-     * @return {@code true} if the element becomes invisible, otherwise throws {@link TimeoutException}.
-     */
-    public static boolean waitForInvisibility(WebElement element, int timeoutSeconds) {
-        WebDriverWait wait = new WebDriverWait(BaseDriver.getDriver(), Duration.ofSeconds(timeoutSeconds));
-        return wait.until(ExpectedConditions.invisibilityOf(element));
     }
 
     // ======================

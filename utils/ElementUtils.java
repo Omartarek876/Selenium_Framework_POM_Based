@@ -1,15 +1,19 @@
 package Selenium_Framework.utils;
 
 import Selenium_Framework.base.BaseDriver;
-import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.support.ui.Select;
+
+import java.time.Duration;
+import java.util.List;
 
 /**
  * A utility class for common element interactions, providing a set of
  * helper methods to simplify and standardize operations like clicking,
- * typing, and selecting dropdowns.
+ * typing, and selecting dropdowns using a By locator.
  */
 public class ElementUtils {
 
@@ -22,20 +26,19 @@ public class ElementUtils {
      * @return The located {@link WebElement} object.
      */
     public static WebElement getElement(By locator) {
-        WaitUtils.waitForVisibility(BaseDriver.getDriver().findElement(locator), 10);
-        return BaseDriver.getDriver().findElement(locator);
+        return WaitUtils.waitForVisibility(locator, 10);
     }
     
     /**
-     * Fetches a list of {@link WebElement} objects after waiting for their visibility.
+     * Fetches a list of {@link WebElement} objects after waiting for their presence in the DOM.
      * This is useful for interacting with multiple elements that share the same locator.
      *
      * @param locator The {@link By} locator for the list of elements.
      * @return A {@link List} of {@link WebElement} objects.
      */
     public static List<WebElement> getElements(By locator) {
-        WaitUtils.waitForVisibility((WebElement) BaseDriver.getDriver().findElements(locator), 10);
-        return BaseDriver.getDriver().findElements(locator);
+        WebDriverWait wait = new WebDriverWait(BaseDriver.getDriver(), Duration.ofSeconds(10));
+        return wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(locator));
     }
 
     /**
@@ -107,8 +110,7 @@ public class ElementUtils {
      * @param locator The {@link By} locator of the checkbox element.
      */
     public static void checkCheckbox(By locator) {
-        WebElement checkbox = BaseDriver.getDriver().findElement(locator);
-        WaitUtils.waitForVisibility(checkbox, 10);
+        WebElement checkbox = getElement(locator);
         if (!checkbox.isSelected()) {
             checkbox.click();
         }
@@ -120,8 +122,7 @@ public class ElementUtils {
      * @param locator The {@link By} locator of the checkbox element.
      */
     public static void uncheckCheckbox(By locator) {
-        WebElement checkbox = BaseDriver.getDriver().findElement(locator);
-        WaitUtils.waitForVisibility(checkbox, 10);
+        WebElement checkbox = getElement(locator);
         if (checkbox.isSelected()) {
             checkbox.click();
         }
@@ -138,5 +139,4 @@ public class ElementUtils {
             radioButton.click();
         }
     }
-
 }
