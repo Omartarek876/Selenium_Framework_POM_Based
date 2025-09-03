@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selenium Framework Utils</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        h2 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 5px;
+            color: #333;
+        }
+        h3 {
+            color: #555;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background: #f4f4f4;
+            margin-bottom: 5px;
+            padding: 10px;
+            border-left: 5px solid #007BFF;
+        }
+        .correct {
+            color: green;
+        }
+        a {
+            text-decoration: none; /* Removes underline from links */
+            color: inherit; /* Keeps link color the same as text */
+        }
+        li:hover {
+            background-color: #e0e0e0; /* Adds a hover effect for better user experience */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Selenium Framework Utility Classes</h1>
+
+    <div class="class-section">
+        <h2>BaseDriver.java</h2>
+        <ul>
+            <li><span class="correct">✅</span> <a href="docs/Selenium_Framework/base/BaseDriver.html" target="_blank">`initializeDriver(String browser)`</a></li>
+            <li><span class="correct">✅</span> <a href="docs/Selenium_Framework/base/BaseDriver.html" target="_blank">`getDriver()`</a></li>
+            <li><span class="correct">✅</span> <a href="docs/Selenium_Framework/base/BaseDriver.html" target="_blank">`quitDriver()`</a></li>
+        </ul>
+    </div>
+
+    <hr>
+
+    <div class="class-section">
+        <h2>WaitUtils.java</h2>
+        <ul>
+            <li><span class="correct">✅</span> <a href="docs/Selenium_Framework/utils/WaitUtils.html" target="_blank">`waitForVisibility(WebElement element, int timeoutSeconds)`</a></li>
+            <li><span class="correct">✅</span> <a href="docs/Selenium_Framework/utils/WaitUtils.html" target="_blank">`waitForClickability(WebElement element, int timeoutSeconds)`</a></li>
+            <li><span class="correct">✅</span> <a href="docs/Selenium_Framework/utils/WaitUtils.html" target="_blank">`waitForPresence(By locator, int timeoutSeconds)`</a></li>
+            <li><span class="correct">✅</span> <a href="docs/Selenium_Framework/utils/WaitUtils.html" target="_blank">`waitForTextToBePresent(WebElement element, String text, int timeoutSeconds)`</a></li>
+            <li><span class="correct">✅</span> <a href="docs/Selenium_Framework/utils/WaitUtils.html" target="_blank">`waitForInvisibility(By locator, int timeoutSeconds)`</a></li>
+            <li><span class="correct">✅</span> <a href="docs/Selenium_Framework/utils/WaitUtils.html" target="_blank">`setImplicitWait(int timeoutSeconds)`</a></li>
+            <li><span class="correct">✅</span> <a href="docs/Selenium_Framework/utils/WaitUtils.html" target="_blank">`fluentWait(By locator, int timeoutSeconds, int pollingSeconds)`</a></li>
+        </ul>
+    </div>
+
+    <hr>
+
+    <div class="class-section">
+        <h2>ElementUtils.java</h2>
+        <ul>
+            <li><span class="correct">✅</span> <a href="docs/Selenium_Framework/utils/ElementUtils.html" target="_blank">`getElement(By locator)`</a></li>
+            <li><span class="correct">✅</span> <a href="docs/Selenium_Framework/utils/ElementUtils.html" target="_blank">`click(By locator)`</a></li>
+            <li><span class="correct">✅</span> <a href="docs/Selenium_Framework/utils/ElementUtils.html" target="_blank">`clearAndSendKeys(By locator, String text)`</a></li>
+            <li><span class="correct">✅</span> <a href="docs/Selenium_Framework/utils/ElementUtils.html" target="_blank">`getText(By locator)`</a></li>
+            <li><span class="correct">✅</span> <a href="docs/Selenium_Framework/utils/ElementUtils.html" target="_blank">`selectDropdownByVisibleText(By locator, String visibleText)`</a></li>
+            <li><span class="correct">✅</span> <a href="docs/Selenium_Framework/utils/ElementUtils.html" target="_blank">`selectDropdownByValue(By locator, String value)`</a></li>
+            <li><span class="correct">✅</span> <a href="docs/Selenium_Framework/utils/ElementUtils.html" target="_blank">`selectDropdownByIndex(By locator, int index)`</a></li>
+            <li><span class="correct">✅</span> <a href="docs/Selenium_Framework/utils/ElementUtils.html" target="_blank">`checkCheckbox(By locator)`</a></li>
+            <li><span class="correct">✅</span> <a href="docs/Selenium_Framework/utils/ElementUtils.html" target="_blank">`uncheckCheckbox(By locator)`</a></li>
+            <li><span class="correct">✅</span> <a href="docs/Selenium_Framework/utils/ElementUtils.html" target="_blank">`selectRadioButton(By locator)`</a></li>
+        </ul>
+    </div>
+
+    <hr>
+
+    <div class="class-section">
+        <h2>BrowserUtils.java</h2>
+        <ul>
+            <li><span class="correct">✅</span> <a href="docs/Selenium_Framework/utils/BrowserUtils.html" target="_blank">`switchToTab(int index)`</a></li>
+            <li><span class="correct">✅</span> <a href="docs/Selenium_Framework/utils/BrowserUtils.html" target="_blank">`closeCurrentTabAndSwitchToFirst()`</a></li>
+            <li><span class="correct">✅</span> <a href="docs/Selenium_Framework/utils/BrowserUtils.html" target="_blank">`refreshPage()`</a></li>
+            <li><span class="correct">✅</span> <a href="docs/Selenium_Framework/utils/BrowserUtils.html" target="_blank">`NavigateToURL(String url)`</a></li>
+            <li><span class="correct">✅</span> <a href="docs/Selenium_Framework/utils/BrowserUtils.html" target="_blank">`NavigateBack()`</a></li>
+            <li><span class="correct">✅</span> <a href="docs/Selenium_Framework/utils/BrowserUtils.html" target="_blank">`NavigateForward()`</a></li>
+        </ul>
+    </div>
+
+    <hr>
+
+    <div class="class-section">
+        <h2>ActionsUtils.java</h2>
+        <ul>
+            <li><span class="correct">✅</span> <a href="docs/Selenium_Framework/utils/ActionsUtils.html" target="_blank">`sendKeyCombination(Keys key1, Keys key2)`</a></li>
+            <li><span class="correct">✅</span> <a href="docs/Selenium_Framework/utils/ActionsUtils.html" target="_blank">`doubleClick(By locator)`</a></li>
+            <li><span class="correct">✅</span> <a href="docs/Selenium_Framework/utils/ActionsUtils.html" target="_blank">`rightClick(By locator)`</a></li>
+            <li><span class="correct">✅</span> <a href="docs/Selenium_Framework/utils/ActionsUtils.html" target="_blank">`clickAndHold(By locator)`</a></li>
+            <li><span class="correct">✅</span> <a href="docs/Selenium_Framework/utils/ActionsUtils.html" target="_blank">`releaseMouse()`</a></li>
+            <li><span class="correct">✅</span> <a href="docs/Selenium_Framework/utils/ActionsUtils.html" target="_blank">`hoverOverElement(By locator)`</a></li>
+            <li><span class="correct">✅</span> <a href="docs/Selenium_Framework/utils/ActionsUtils.html" target="_blank">`hoverAndClick(By locator)`</a></li>
+            <li><span class="correct">✅</span> <a href="docs/Selenium_Framework/utils/ActionsUtils.html" target="_blank">`dragAndDrop(By sourceLocator, By targetLocator)`</a></li>
+            <li><span class="correct">✅</span> <a href="docs/Selenium_Framework/utils/ActionsUtils.html" target="_blank">`scrollToElement(By locator)`</a></li>
+        </ul>
+    </div>
+
+    <hr>
+
+    <div class="class-section">
+        <h2>KeyboardUtils.java</h2>
+        <ul>
+            <li><span class="correct">✅</span> <a href="docs/Selenium_Framework/utils/KeyboardUtils.html" target="_blank">`sendKeys(By locator, String text)`</a></li>
+            <li><span class="correct">✅</span> <a href="docs/Selenium_Framework/utils/KeyboardUtils.html" target="_blank">`sendKey(WebElement element, Keys key)`</a></li>
+            <li><span class="correct">✅</span> <a href="docs/Selenium_Framework/utils/KeyboardUtils.html" target="_blank">`sendKey(By locator, Keys key)`</a></li>
+            <li><span class="correct">✅</span> <a href="docs/Selenium_Framework/utils/KeyboardUtils.html" target="_blank">`sendKeyCombination(WebElement element, Keys key1, Keys key2)`</a></li>
+            <li><span class="correct">✅</span> <a href="docs/Selenium_Framework/utils/KeyboardUtils.html" target="_blank">`sendEnter(WebElement element)`</a></li>
+            <li><span class="correct">✅</span> <a href="docs/Selenium_Framework/utils/KeyboardUtils.html" target="_blank">`sendTab(WebElement element)`</a></li>
+            <li><span class="correct">✅</span> <a href="docs/Selenium_Framework/utils/KeyboardUtils.html" target="_blank">`copyAll(WebElement element)`</a></li>
+            <li><span class="correct">✅</span> <a href="docs/Selenium_Framework/utils/KeyboardUtils.html" target="_blank">`copyText(WebElement element)`</a></li>
+            <li><span class="correct">✅</span> <a href="docs/Selenium_Framework/utils/KeyboardUtils.html" target="_blank">`pasteText(WebElement element)`</a></li>
+        </ul>
+    </div>
+
+    <hr>
+
+    <div class="class-section">
+        <h2>AlertUtils.java</h2>
+        <ul>
+            <li><span class="correct">✅</span> <a href="docs/Selenium_Framework/utils/AlertUtils.html" target="_blank">`acceptAlert()`</a></li>
+            <li><span class="correct">✅</span> <a href="docs/Selenium_Framework/utils/AlertUtils.html" target="_blank">`dismissAlert()`</a></li>
+            <li><span class="correct">✅</span> <a href="docs/Selenium_Framework/utils/AlertUtils.html" target="_blank">`getAlertText()`</a></li>
+            <li><span class="correct">✅</span> <a href="docs/Selenium_Framework/utils/AlertUtils.html" target="_blank">`sendTextToAlert(String text)`</a></li>
+        </ul>
+    </div>
+
+</body>
+</html>
