@@ -1,6 +1,6 @@
-package Selenium_Framework.utils;
+package utils;
 
-import Selenium_Framework.base.BaseDriver;
+import base.BaseDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;

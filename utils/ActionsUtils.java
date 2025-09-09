@@ -1,7 +1,7 @@
-package Selenium_Framework.utils;
+package utils;
 
-import Selenium_Framework.base.BaseDriver;
-import static Selenium_Framework.utils.ElementUtils.getElement;
+import base.BaseDriver;
+import static utils.ElementUtils.getElement;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;

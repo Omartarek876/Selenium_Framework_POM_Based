@@ -1,6 +1,6 @@
-package Selenium_Framework.utils;
+package utils;
 
-import static Selenium_Framework.utils.ElementUtils.getElement;
+import static utils.ElementUtils.getElement;
 import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
